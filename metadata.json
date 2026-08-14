@@ -1,0 +1,6 @@
+{
+  "name": "IBON",
+  "description": "IBON — Cybersecurity & Digital Design Portfolio: Building what is seen. Protecting what isn't.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

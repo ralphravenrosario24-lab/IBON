@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
+    --font-display: 'Space Grotesk', 'Inter', sans-serif;
+    
+    /* Pixel Cursor SVG Data URIs */
+    --cursor-default: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' shape-rendering='crispEdges'%3E%3Cpath fill='%23000000' d='M0 0h3v3H0zM0 3h3v3H0zM3 3h3v3H3zM0 6h3v3H0zM6 6h3v3H6zM0 9h3v3H0zM9 9h3v3H9zM0 12h3v3H0zM12 12h3v3H12zM0 15h3v3H0zM15 15h3v3H15zM0 18h3v3H0zM0 21h3v3H0zM3 21h3v3H3zM6 18h3v3H6zM9 15h3v3H9zM12 15h3v3H12zM15 15h3v3H15zM9 18h3v3H9zM12 21h3v3H12zM15 21h3v3H15zM18 18h3v3H18zM15 18h3v3H15zM12 15h3v3H12z'/%3E%3Cpath fill='%2300f2ff' d='M3 3h3v15H3zM6 6h3v9H6zM9 9h3v3H9zM12 12h3v3H12zM12 18h3v3H12zM15 18h3v3H15z'/%3E%3Cpath fill='%23ffffff' d='M3 3h3v3H3zM6 6h3v3H6zM3 6h3v3H3z'/%3E%3C/svg%3E") 0 0, auto;
+    
+    --cursor-pointer: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' shape-rendering='crispEdges'%3E%3Cpath fill='%23000000' d='M6 0h4v3H6zM3 3h3v6H3zM10 3h3v9h-3zM3 9h3v9H3zM0 15h3v9H0zM3 21h18v3H3zM21 12h3v9h-3zM18 6h3v6h-3zM15 3h3v6h-3zM12 0h3v6h-3z'/%3E%3Cpath fill='%2300f2ff' d='M6 3h4v15H6zM10 12h5v6h-5zM3 15h3v6H3zM15 9h3v9h-3zM18 12h3v6h-3z'/%3E%3Cpath fill='%23ffffff' d='M6 3h3v6H6zM8 4h2v4H8zM15 9h2v3h-2z'/%3E%3C/svg%3E") 6 0, pointer;
+
+    --cursor-text: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' shape-rendering='crispEdges'%3E%3Cpath fill='%23000000' d='M6 0h12v3H6zM6 21h12v3H6zM9 3h6v3H9zM9 18h6v3H9zM10 6h4v12h-4z'/%3E%3Cpath fill='%2300f2ff' d='M8 1h8v1H8zM8 22h8v1H8zM11 3h2v18h-2z'/%3E%3Cpath fill='%23ffffff' d='M11 7h2v2h-2zM11 15h2v2h-2z'/%3E%3C/svg%3E") 12 12, text;
+  }
+
+  html, body, * {
+    cursor: var(--cursor-default);
+  }
+
+  a, button, [role="button"], input[type="submit"], input[type="button"], select, label, .clickable {
+    cursor: var(--cursor-pointer) !important;
+  }
+
+  input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="search"], textarea {
+    cursor: var(--cursor-text) !important;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #020408;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .mono, .font-mono, .tech-tag, .tech-badge {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #020408;
+}
+::-webkit-scrollbar-thumb {
+  background: #0f172a;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 242, 255, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f2ff;
+}
+
+/* Immersive Grid Background */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.grid-bg-dense {
+  background-image: 
+    linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Scanline FX */
+.scanline {
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 242, 255, 0.02) 50%);
+  background-size: 100% 4px;
+}
+
+/* Glow Text & Elements */
+.glow-text {
+  text-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 18px rgba(0, 242, 255, 0.65);
+}
+
+/* Glass Panel & Electric Border */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 242, 255, 0.1);
+}
+
+.electric-border {
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+.electric-border-lg {
+  box-shadow: 0 0 25px rgba(0, 242, 255, 0.35);
+}
+
+.electric-border-focus:focus-within {
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+  border-color: rgba(0, 242, 255, 0.6);
+}
+
+/* HUD Corner Marks */
+.hud-corner-tl {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #00f2ff;
+  border-left: 2px solid #00f2ff;
+}
+.hud-corner-tr {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #00f2ff;
+  border-right: 2px solid #00f2ff;
+}
+.hud-corner-bl {
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid #00f2ff;
+  border-left: 2px solid #00f2ff;
+}
+.hud-corner-br {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid #00f2ff;
+  border-right: 2px solid #00f2ff;
+}
